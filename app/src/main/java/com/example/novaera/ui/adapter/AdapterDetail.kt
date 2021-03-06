@@ -34,6 +34,13 @@ class AdapterDetail: RecyclerView.Adapter<AdapterDetail.ViewHolderDetail>()  {
             binding.tvLastPrice.text = classNovaEraDetail.lastPrice.toString()
             binding.tvDescription.text = classNovaEraDetail.description
             Glide.with(binding.ivImage).load(classNovaEraDetail.image).into(binding.ivImage)
+            if (classNovaEraDetail.credit) {
+                binding.tvCredEfec.text = "Acepta Crédito"
+                binding.ivCredEfec.setImageResource(R.drawable.ic_credito)
+            } else {
+                binding.tvCredEfec.text = "Sólo Efectivo"
+                binding.ivCredEfec.setImageResource(R.drawable.ic_efectivo)
+            }
         }
 
         override fun onClick(v: View?) {

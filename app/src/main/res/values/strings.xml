@@ -6,7 +6,6 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="mailSubject">Consulta %1$s id %2$d</string>
     <string name="mailText">“Hola \n\n
         Vi la propiedad %1$s de código %2$d y me gustaría que me \n

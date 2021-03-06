@@ -78,4 +78,24 @@
         app:layout_constraintStart_toEndOf="@+id/ivImage"
         app:layout_constraintTop_toBottomOf="@+id/tvLastPrice" />
 
+    <ImageView
+        android:id="@+id/ivCredEfec"
+        android:layout_width="59dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/tvPrice2"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice2"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvCredEfec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/ivCredEfec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPrice2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
