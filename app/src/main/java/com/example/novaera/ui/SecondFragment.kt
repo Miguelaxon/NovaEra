@@ -27,7 +27,7 @@ class SecondFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            idM = requireArguments().getInt("id")
+            idM = requireArguments().getInt("idCel")
             name = requireArguments().getString("name", "")
         }
     }
