@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class ViewModel(application: Application): AndroidViewModel(application) {
     private val repository: Repository
     val listAll: LiveData<List<ClassNovaEra>>
+    private var idM: Int = 0
 
     init {
         val baseDatos = BaseDatos.getDataBase(application).getIDAO()
@@ -20,5 +21,10 @@ class ViewModel(application: Application): AndroidViewModel(application) {
             repository.getFetchCoroutines()
         }
         listAll = repository.listAll
+    }
+
+    fun selectedDetail(id: Int) = viewModelScope.launch {
+        idM = id
+        repository.getFetchCoroutinesId(id)
     }
 }

@@ -16,4 +16,7 @@ interface IDao {
 
     @Query("SELECT * FROM table_list")
     fun getAllList(): LiveData<List<ClassNovaEra>>
+
+    @Query("SELECT * FROM table_detail WHERE id = :id")
+    fun getAllDetail(id: Int): LiveData<List<ClassNovaEraDetail>>
 }

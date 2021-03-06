@@ -37,5 +37,12 @@ class FirstFragment : Fragment() {
                 adapter.update(it)
             }
         })
+
+        adapter.selected().observe(viewLifecycleOwner, Observer {
+            it?.let {
+                viewModel.selectedDetail(it.id)
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            }
+        })
     }
 }
