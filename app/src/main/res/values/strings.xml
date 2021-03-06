@@ -13,4 +13,6 @@
         contactaran a este correo o al siguiente número _________ \n\n
         Quedo atento.</string>
     <string name="comprar">Comprar</string>
+    <string name="precio_anterior">Precio Anterior</string>
+    <string name="precio_actual">Precio Actual</string>
 </resources>
