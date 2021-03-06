@@ -41,8 +41,11 @@ class FirstFragment : Fragment() {
 
         adapter.selected().observe(viewLifecycleOwner, Observer {
             it?.let {
+                val bundle = Bundle()
+                bundle.putInt("idCel", it.id)
+                bundle.putString("name", it.name)
                 viewModel.selectedDetail(it.id)
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
             }
         })
     }

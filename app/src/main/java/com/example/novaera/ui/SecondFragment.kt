@@ -21,6 +21,16 @@ import com.example.novaera.ui.adapter.AdapterDetail
 class SecondFragment : Fragment() {
     private lateinit var binding: FragmentSecondBinding
     private val viewModel: ViewModel by activityViewModels()
+    var idM: Int = 0
+    lateinit var name: String
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (arguments != null) {
+            idM = requireArguments().getInt("id")
+            name = requireArguments().getString("name", "")
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -54,8 +64,8 @@ class SecondFragment : Fragment() {
         emailIntent.type = "text/plain"
         emailIntent.putExtra(Intent.EXTRA_EMAIL, para)
         emailIntent.putExtra(Intent.EXTRA_CC, copia)
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.mailSubject, title, idM))
-        emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.mailText, title, idM))
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.mailSubject, name, idM))
+        emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.mailText, name, idM))
         try {
             startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
         } catch (ex: ActivityNotFoundException) {

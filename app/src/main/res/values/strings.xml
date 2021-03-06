@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">Nova Era</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="lastPrice">Antes $$%1$d</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="mailSubject">Consulta %1$s id %2$d</string>
+    <string name="mailText">“Hola \n\n
+        Vi la propiedad %1$s de código %2$d y me gustaría que me \n
+        contactaran a este correo o al siguiente número _________ \n\n
+        Quedo atento.</string>
     <string name="comprar">Comprar</string>
 </resources>
