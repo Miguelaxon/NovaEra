@@ -28,6 +28,7 @@ class AdapterList: RecyclerView.Adapter<AdapterList.ViewHolderList>() {
             binding.tvTitle.text = classNovaEra.name
             binding.tvPrice.text = classNovaEra.price.toString()
             Glide.with(binding.imageView).load(classNovaEra.image).into(binding.imageView)
+            itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {

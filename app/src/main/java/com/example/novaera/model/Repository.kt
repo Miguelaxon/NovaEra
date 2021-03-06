@@ -48,4 +48,6 @@ class Repository(private val iDao: IDao) {
             Log.d("Error Books Coroutine", t.message.toString())
         }
     }
+
+    fun getDetail(id: Int): LiveData<List<ClassNovaEraDetail>> = iDao.getAllDetail(id)
 }

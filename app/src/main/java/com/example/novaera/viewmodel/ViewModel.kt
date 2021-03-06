@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.novaera.local.BaseDatos
 import com.example.novaera.local.ClassNovaEra
+import com.example.novaera.local.ClassNovaEraDetail
 import com.example.novaera.model.Repository
 import kotlinx.coroutines.launch
 
@@ -27,4 +28,6 @@ class ViewModel(application: Application): AndroidViewModel(application) {
         idM = id
         repository.getFetchCoroutinesId(id)
     }
+
+    fun returnDetail(): LiveData<List<ClassNovaEraDetail>> = repository.getDetail(idM)
 }
