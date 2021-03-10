@@ -14,4 +14,17 @@
     <string name="comprar">Comprar</string>
     <string name="precio_anterior">Precio Anterior</string>
     <string name="precio_actual">Precio Actual</string>
+    <string name="credito">Acepta Crédito</string>
+    <string name="efectivo">Sólo Efectivo</string>
+    <string name="volver">Volver</string>
+    <string name="salir">Salir</string>
+    <string name="btn_si">SI</string>
+    <string name="btn_no">NO</string>
+    <string name="desea_salir">Desea Salir?</string>
+    <string name="title_activity_pop_up_exit">PopUpExitActivity</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="btnsi">SI</string>
+    <string name="btnno">NO</string>
 </resources>

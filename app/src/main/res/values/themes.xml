@@ -21,5 +21,8 @@
 
     <style name="Theme.NovaEra.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.NovaEra.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.NovaEra.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>

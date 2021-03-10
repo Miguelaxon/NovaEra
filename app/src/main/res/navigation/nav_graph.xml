@@ -12,12 +12,17 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_otherFragment"
+            app:destination="@id/otherFragment"
+            app:popEnterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.novaera.ui.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second"/>
+        android:id="@+id/otherFragment"
+        android:name="com.example.novaera.ui.OtherFragment"
+        android:label="OtherFragment"
+        tools:layout="@layout/fragment_other">
+        <action
+            android:id="@+id/action_otherFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>

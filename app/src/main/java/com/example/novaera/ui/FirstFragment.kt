@@ -45,7 +45,7 @@ class FirstFragment : Fragment() {
                 bundle.putInt("idCel", it.id)
                 bundle.putString("name", it.name)
                 viewModel.selectedDetail(it.id)
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+                findNavController().navigate(R.id.action_FirstFragment_to_otherFragment, bundle)
             }
         })
     }

@@ -50,4 +50,6 @@ class Repository(private val iDao: IDao) {
     }
 
     fun getDetail(id: Int): LiveData<List<ClassNovaEraDetail>> = iDao.getAllDetail(id)
+
+    fun getDetail2(id: Int): LiveData<ClassNovaEraDetail> = iDao.getAllDetail2(id)
 }

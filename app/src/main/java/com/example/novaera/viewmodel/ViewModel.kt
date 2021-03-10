@@ -3,6 +3,7 @@ package com.example.novaera.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.novaera.local.BaseDatos
 import com.example.novaera.local.ClassNovaEra
@@ -14,6 +15,8 @@ class ViewModel(application: Application): AndroidViewModel(application) {
     private val repository: Repository
     val listAll: LiveData<List<ClassNovaEra>>
     private var idM: Int = 0
+
+    fun selectedId(id: Int): LiveData<ClassNovaEraDetail> = repository.getDetail2(idM)
 
     init {
         val baseDatos = BaseDatos.getDataBase(application).getIDAO()

@@ -1,5 +1,6 @@
 package com.example.novaera.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
