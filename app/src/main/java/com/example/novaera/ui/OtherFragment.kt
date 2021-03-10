@@ -1,19 +1,13 @@
 package com.example.novaera.ui
 
 import android.content.ActivityNotFoundException
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
-import android.widget.TextView
-import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -21,6 +15,8 @@ import com.example.novaera.R
 import com.example.novaera.databinding.FragmentOtherBinding
 import com.example.novaera.databinding.PopupExitBinding
 import com.example.novaera.viewmodel.ViewModel
+import java.text.DecimalFormat
+import kotlin.toBigDecimal as toBigDecimal1
 
 class OtherFragment : Fragment() {
     private lateinit var binding: FragmentOtherBinding
@@ -38,8 +34,10 @@ class OtherFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentOtherBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -50,8 +48,9 @@ class OtherFragment : Fragment() {
             it?.let {
                 Glide.with(this).load(it.image).into(binding.ivImage)
                 binding.tvName.text = it.name
-                binding.tvPrice2.text = it.price.toString()
-                binding.tvLastPrice.text = it.lastPrice.toString()
+                val formatter = DecimalFormat("$#,###")
+                binding.tvPrice2.text = formatter.format(it.price).toString()
+                binding.tvLastPrice.text = formatter.format(it.lastPrice).toString()
                 binding.tvDescription.text = it.description
                 if (it.credit) {
                     binding.tvCredEfec.text = getString(R.string.credito)
@@ -87,15 +86,18 @@ class OtherFragment : Fragment() {
         try {
             startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
         } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(context,
-                "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                context,
+                "No tienes clientes de email instalados.", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
     fun showDialog() {
         val dialogBuilder = context?.let { AlertDialog.Builder(it) }
         dialogBuilder?.setMessage("Seguro desea salir?")
-        dialogBuilder?.setPositiveButton("Done"
+        dialogBuilder?.setPositiveButton(
+            "Done"
         ) { _, _ -> }
         val b = dialogBuilder?.create()
         b?.show()

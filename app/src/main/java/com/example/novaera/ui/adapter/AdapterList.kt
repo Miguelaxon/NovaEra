@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.novaera.databinding.ItemListBinding
 import com.example.novaera.local.ClassNovaEra
+import java.text.DecimalFormat
 import java.text.NumberFormat
 
 class AdapterList: RecyclerView.Adapter<AdapterList.ViewHolderList>() {
@@ -25,8 +26,9 @@ class AdapterList: RecyclerView.Adapter<AdapterList.ViewHolderList>() {
     inner class ViewHolderList(private val binding: ItemListBinding):
             RecyclerView.ViewHolder(binding.root), View.OnClickListener{
         fun bind(classNovaEra: ClassNovaEra){
+            val formatter = DecimalFormat("$#,###")
             binding.tvTitle.text = classNovaEra.name
-            binding.tvPrice.text = classNovaEra.price.toString()
+            binding.tvPrice.text = formatter.format(classNovaEra.price).toString()
             Glide.with(binding.imageView).load(classNovaEra.image).into(binding.imageView)
             itemView.setOnClickListener(this)
         }
