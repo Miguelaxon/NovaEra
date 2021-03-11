@@ -12,10 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NovaEra">
         <activity
-            android:name=".ui.PopUpExitActivity"
-            android:label="@string/title_activity_pop_up_exit"
-            android:theme="@style/Theme.NovaEra.PopupOverlay"></activity>
-        <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.NovaEra.NoActionBar">
